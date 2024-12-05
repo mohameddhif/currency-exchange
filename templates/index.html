@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Currency Converter</h1>
+        <div class="card mt-4 p-4 shadow-sm">
+            <form id="exchange-form">
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" class="form-control" id="amount" placeholder="Enter amount" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="from-currency">From Currency:</label>
+                        <select class="form-control" id="from-currency">
+                            {% for code, name in currencies.items() %}
+                            <option value="{{ code }}">{{ code }} - {{ name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="to-currency">To Currency:</label>
+                        <select class="form-control" id="to-currency">
+                            {% for code, name in currencies.items() %}
+                            <option value="{{ code }}">{{ code }} - {{ name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Convert</button>
+            </form>
+            <div id="result" class="mt-4">
+                <h3>Converted Amount: <span id="converted-amount"></span></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
