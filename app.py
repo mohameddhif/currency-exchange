@@ -1,10 +1,15 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import json
 import urllib.request
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 
-KEY = 'fca_live_VZXZ0d9Ae7fu8JKNDauUcWafWyx7fDLUybkOOSLL'
+KEY = os.getenv('FREE_CURRENCY_API_KEY')
 CURRENCY_API = f'https://api.freecurrencyapi.com/v1/currencies?apikey={KEY}'
 LATEST_API = 'https://api.freecurrencyapi.com/v1/latest'
 
