@@ -22,7 +22,7 @@ A simple and secure currency converter built with Flask and the [Free Currency A
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repository-url>
+   git clone https://github.com/mohameddhif/currency-exchange
    cd currency_exchange
    ```
 
